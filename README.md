@@ -1,7 +1,7 @@
-🧺 LaundryBox Admin Dashboard
+# 🧺 LaundryBox Admin Dashboard
 A high-performance MERN Stack application designed for laundry business owners to manage orders, track revenue, and handle multi-item customer drop-offs with ease.
 
-🚀 Key Features
+# 🚀 Key Features
 Admin-First Interface: Optimized for staff use with a focus on speed and data visibility.
 
 Dynamic Multi-Item Orders: Allows adding multiple garment types (e.g., 5 Shirts, 2 Suits) in a single order entry.
@@ -15,7 +15,7 @@ Real-time Analytics: Dashboard cards showing Total Revenue, Order Count, and Sta
 Modern UI: Built with React 19, Tailwind CSS v4, and Lucide-React icons.
 
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 Frontend:
 
 React.js (Vite)
@@ -35,7 +35,7 @@ MongoDB & Mongoose
 CORS (Cross-Origin Resource Sharing)
 
 
-🧠 Business Logic & Trade-offs
+# 🧠 Business Logic & Trade-offs
 During development, several strategic technical choices were made:
 
 Server-Side Derived Data: I chose to calculate the totalBill on the backend using a pre-save hook. This prevents "Price Tampering" where a client could theoretically send a manipulated total to the API.
@@ -46,7 +46,7 @@ Scalable Schema: The garments field is stored as an array of objects, making it 
 
 
 
-🤖 AI Usage Report
+# 🤖 AI Usage Report
 I utilized AI tools (Gemini) to accelerate the development process in the following ways:
 
 Boilerplate Generation: Rapidly scaffolding the Tailwind v4 configuration and Vite setup.
@@ -58,7 +58,7 @@ UI/UX Refinement: Drafting the dynamic form logic for adding/removing garment ro
 Documentation: Assistance in structuring this README to meet industry standards.
 
 
-⚙️ Installation & Setup
+# ⚙️ Installation & Setup
 1. Clone the Repository
 
 git clone <your-repo-link>
