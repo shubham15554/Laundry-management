@@ -7,10 +7,10 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
-const allowedOrigins = ['https://laundry-management-kohl.vercel.app','http://localhost:5173']; // Update with your frontend URL
+const allowedOrigins = ['https://laundry-management-kohl.vercel.app','http://localhost:5173']; 
 app.use(cors({
     origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
+    
         if (!origin) return callback(null, true);
         
         if (allowedOrigins.indexOf(origin) === -1) {
@@ -19,7 +19,7 @@ app.use(cors({
         }
         return callback(null, true);
     },
-    credentials: true, // If you're using cookies/sessions
+    credentials: true, 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));

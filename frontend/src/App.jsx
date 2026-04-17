@@ -10,7 +10,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Form State with Multi-Garment Support
+
   const [formData, setFormData] = useState({
     customerName: '',
     phoneNumber: '',
@@ -23,7 +23,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      // Sends 'search' as a query param to your updated backend logic
+
       const ordersRes = await axios.get(`${API_BASE}/orders?search=${search}`);
       const statsRes = await axios.get(`${API_BASE}/orders/dashboard`);
       setOrders(ordersRes.data);
@@ -33,7 +33,6 @@ function App() {
     }
   };
 
-  // Logic to add more garment rows
   const addGarmentRow = () => {
     setFormData({
       ...formData,
@@ -41,13 +40,12 @@ function App() {
     });
   };
 
-  // Logic to remove a garment row
   const removeGarmentRow = (index) => {
     const updatedGarments = formData.garments.filter((_, i) => i !== index);
     setFormData({ ...formData, garments: updatedGarments });
   };
 
-  // Logic to update a specific garment's fields
+  
   const handleGarmentChange = (index, field, value) => {
     const updatedGarments = [...formData.garments];
     updatedGarments[index][field] = value;
@@ -56,9 +54,13 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.phoneNumber.length !== 10) {
+      alert("Enter valid phone number (10 digits)");
+      return; 
+    }
     setLoading(true);
     try {
-      // Send the entire garments array as expected by exports.createOrder
+      
       await axios.post(`${API_BASE}/orders`, formData);
       setFormData({
         customerName: '',
@@ -105,10 +107,8 @@ function App() {
 
       <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        {/* LEFT COLUMN: STATS & FORM */}
         <div className="lg:col-span-4 space-y-6">
-          
-          {/* STATS */}
+        
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
               <p className="text-[10px] font-bold text-slate-400 uppercase">Revenue</p>
@@ -120,7 +120,6 @@ function App() {
             </div>
           </div>
 
-          {/* CREATE ORDER FORM */}
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
             <h2 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
               <Plus size={18} className="text-blue-600"/> New Customer Drop-off
@@ -158,7 +157,6 @@ function App() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: ORDERS TABLE */}
         <div className="lg:col-span-8">
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <table className="w-full text-left border-collapse">
