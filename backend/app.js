@@ -7,7 +7,7 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
-const allowedOrigins = ['https://laundry-management-kohl.vercel.app/','http://localhost:5173']; // Update with your frontend URL
+const allowedOrigins = ['https://laundry-management-kohl.vercel.app','http://localhost:5173']; // Update with your frontend URL
 app.use(cors({
     origin: function (origin, callback) {
         // Allow requests with no origin (like mobile apps or curl requests)
