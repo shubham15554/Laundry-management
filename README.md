@@ -66,10 +66,24 @@ I utilized AI tools (Gemini) to accelerate development:
 * **UI/UX Refinement:** Drafting the dynamic form logic for multi-item garment rows.
 
 ---
+## Installation
 
-## ⚙️ Installation & Setup
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/shubham15554/Laundry-management
+   cd meetly
 
-### 1. Clone the Repository
-```bash
-git clone <your-repo-link>
-cd Laundry-order-managment
+2. **Setup Backend**
+   ```bash
+    cd backend
+    npm install
+    Create a .env file and add your variables
+    npm install -g nodemon  # If not already installed
+    nodemon app.js
+
+3. **Setup Frontend**
+    ```bash
+    Open a new terminal window
+    cd frontend
+    npm install
+    npm run dev
