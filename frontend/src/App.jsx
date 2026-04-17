@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Package, DollarSign, CheckCircle, Search, Plus, Trash2, LayoutDashboard } from 'lucide-react';
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://laundry-management-qvsw.onrender.com/api";
 
 function App() {
   const [orders, setOrders] = useState([]);
